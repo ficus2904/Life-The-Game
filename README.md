@@ -2,6 +2,9 @@
 
 Conway's Game of Life is a cellular automaton devised by mathematician John Conway. It is a zero-player game, meaning that its evolution is determined by its initial state, with no further input. The game consists of a grid of cells, each of which can be alive or dead. The cells evolve through generations based on simple rules.
 
+## Live demo
+https://ficus2904.github.io/Life-The-Game/
+
 ## Rules
 
 1. **Underpopulation:** A live cell with fewer than two live neighbors dies.

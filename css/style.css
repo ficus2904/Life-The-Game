@@ -116,4 +116,15 @@ label {
   font-weight: bold;
   text-align: center;
   color: #fff;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+footer a {
+  color: #0366d6;
+  text-decoration: none;
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */
