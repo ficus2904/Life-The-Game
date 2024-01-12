@@ -49,7 +49,11 @@ function getIterCells() {
 
 function oneStep() {
     let arrIterCells = getIterCells()
-    if (!arrIterCells.length) return resetInterval()
+    if (!arrIterCells.length) {
+        createGrid(getElById('size').value);
+        resetGrid();
+        return resetInterval()
+    }
     let setAlive = [];
     let removeAlive = [];
     for (let cell of arrIterCells) {
