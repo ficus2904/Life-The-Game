@@ -24,22 +24,22 @@ The **Pause** button halts the ongoing simulation. Clicking this button stops th
 
 ### Reset Button
 
-The **Reset** button clears the grid and resets the iteration count. Clicking this button removes all live cells from the grid, effectively starting the simulation anew. It is useful for starting a fresh simulation or making adjustments to the grid configuration.
+The **Reset** button clears the grid and resets the iteration count. Clicking this button removes all live cells from the grid, effectively starting the simulation anew. It is useful for starting a fresh simulation or making adjustments to the grid configuration (including value in Size (rows) input).
 
 ### Random Button
 
 The **Random** button generates a random configuration on the grid. Clicking this button sets a random percentage of cells to be initially alive. This feature allows users to explore different starting conditions and observe the unique patterns that emerge during the simulation.
 
 
-## Input Descriptions (trigger key is Enter)
+## Input Descriptions
 
 ### Size Input
 
-The **Size Input** allows users to customize the grid size by specifying the number of rows. Adjusting the value in this input field influences the dimensions of the grid, providing flexibility to explore different scales for the simulation.
+The **Size Input** allows users to customize the grid size by specifying the number of rows. Adjusting the value in this input field influences the dimensions of the grid, providing flexibility to explore different scales for the simulation. Reset button resize grid (or empty grid with Start button or for PC users push Enter).
 
 ### Speed Input
 
-The **Speed Input** enables users to set the simulation speed in milliseconds. By modifying the value in this input field, users can control the rate at which cells evolve during the simulation. Faster speeds result in quicker iterations, while slower speeds allow for more detailed observation.
+The **Speed Input** enables users to set the simulation speed in milliseconds. By modifying the value in this input field, users can control the rate at which cells evolve during the simulation. Faster speeds result in quicker iterations, while slower speeds allow for more detailed observation. User can pause iteration, change speed and continue iteration (start button) with new speed.
 
 ### Random Input
 

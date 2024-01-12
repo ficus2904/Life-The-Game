@@ -1,14 +1,15 @@
 let getElById = (el) => document.getElementById(String(el));
 const mainGrid = document.querySelector('.grid');
-let maxRow = getElById('size').value;
+let maxRow;
 let iteration = getElById('iteration');
 let loop;
 
-function createGrid(size) {
+function createGrid() {
+    maxRow = getElById('size').value
     mainGrid.innerHTML = ''
-    mainGrid.style.gridTemplateColumns = `repeat(${size}, 1fr)`
-    mainGrid.style.gridTemplateRows = `repeat(${size}, 1fr)`
-    for (let i = 1; i <= size ** 2; i++) {
+    mainGrid.style.gridTemplateColumns = `repeat(${maxRow}, 1fr)`
+    mainGrid.style.gridTemplateRows = `repeat(${maxRow}, 1fr)`
+    for (let i = 1; i <= maxRow ** 2; i++) {
         let cell = document.createElement('div');
         cell.classList.add('cell');
         cell.setAttribute('id', i);
@@ -49,11 +50,7 @@ function getIterCells() {
 
 function oneStep() {
     let arrIterCells = getIterCells()
-    if (!arrIterCells.length) {
-        createGrid(getElById('size').value);
-        resetGrid();
-        return resetInterval()
-    }
+    if (!arrIterCells.length) return resetInterval()
     let setAlive = [];
     let removeAlive = [];
     for (let cell of arrIterCells) {
@@ -72,7 +69,8 @@ function resetInterval() {
 
 function resetGrid() {
     resetInterval()
-    document.querySelectorAll('.alive').forEach(item => item.classList.remove('alive'))
+    maxRow = getElById('size').value;
+    createGrid();
     getElById('iteration').innerText = 0
 }
 
@@ -82,17 +80,18 @@ function setRandom() {
     }
 }
 
-createGrid(maxRow);
 
-getElById('btn-1').addEventListener('click', () => loop || (loop = setInterval(oneStep, getElById('speed').value)));
+createGrid();
+
+getElById('btn-1').addEventListener('click', () => {
+    if (maxRow !== getElById('size').value) resetGrid()
+    loop || (loop = setInterval(oneStep, getElById('speed').value))});
 getElById('btn-2').addEventListener('click', resetInterval);
 getElById('btn-3').addEventListener('click', resetGrid);
 getElById('btn-4').addEventListener('click', setRandom);
 getElById('size').addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.code === 'Enter') {
         e.preventDefault();
-        maxRow = getElById('size').value;
-        createGrid(maxRow);
-        resetGrid();
+        resetGrid()
     }
 });
