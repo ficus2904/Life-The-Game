@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon">
+    <title>Life The Game</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bth-cont">
+            <button class="btn" id="btn-1">Start</button>
+            <button class="btn" id="btn-2">Pause</button>
+            <button class="btn" id="btn-3">Reset</button>
+            <button class="btn" id="btn-4">Random</button>
+        </div>
+        <div class="input-cont">
+            <div class="input-group">
+                <label for="size">Size (rows):</label>
+                <input type="text" id="size" name="size" value="100">
+            </div>
+            <div class="input-group">
+                <label for="speed">Speed (ms):</label>
+                <input type="text" id="speed" name="speed" value="50">
+            </div>
+            <div class="input-group">
+                <label for="random">Random (%):</label>
+                <input type="text" id="random" name="random" value="50">
+            </div>
+        </div>
+        <div class="grid"></div>
+        <div id="iteration"><span>0</span></div>
+
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
