@@ -3,6 +3,7 @@ const mainGrid = document.querySelector('.grid');
 let maxRow;
 let iteration = getElById('iteration');
 let loop;
+let arrIterCells = [];
 
 function createGrid() {
     maxRow = getElById('size').value
@@ -17,7 +18,6 @@ function createGrid() {
         mainGrid.append(cell);
     }
 }
-
 
 function getGrid(id) {
     let neighbors = [];
@@ -35,9 +35,6 @@ function getGrid(id) {
     return neighbors;
 }
 
-
-
-
 function getIterCells() {
     let targetCell = document.querySelectorAll('.alive')
     let arrCellsId = [...targetCell];
@@ -49,7 +46,11 @@ function getIterCells() {
 }
 
 function oneStep() {
-    let arrIterCells = getIterCells()
+    let currentArrIterCells = getIterCells()
+    if (currentArrIterCells.every((value, index) => value === arrIterCells[index])) {
+        return resetInterval()
+    }
+    arrIterCells = currentArrIterCells
     if (!arrIterCells.length) return resetInterval()
     let setAlive = [];
     let removeAlive = [];
