@@ -85,7 +85,8 @@ getElById('btn-2').addEventListener('click', resetInterval);
 getElById('btn-3').addEventListener('click', resetGrid);
 getElById('btn-4').addEventListener('click', setRandom);
 getElById('size').addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' || e.code === 'Enter') {
+        e.preventDefault();
         maxRow = getElById('size').value;
         createGrid(maxRow);
         resetGrid();
