@@ -1,6 +1,7 @@
 body {
-  background: #7e7e7e;
+  background-image: url("../img/shattered-island.gif");
   display: grid;
+  font-family: "Roboto", sans-serif;
 }
 
 input {
@@ -9,6 +10,10 @@ input {
 
 label {
   color: #fff;
+}
+
+.container {
+  padding: 2vh;
 }
 
 .input-cont {
@@ -30,8 +35,8 @@ label {
 }
 .bth-cont .btn {
   margin: 1% auto;
-  width: 150px;
-  height: 40px;
+  min-width: 150px;
+  min-height: 40px;
   font-size: 2vh;
   font-weight: bold;
   text-align: center;
@@ -86,12 +91,12 @@ label {
 .grid {
   width: 80vh;
   height: 80vh;
-  border: 1px solid #c0c0c0;
+  border: thin solid #c0c0c0;
   margin: 20px auto;
   display: grid;
 }
 .grid .cell {
-  border: 1px solid #c0c0c0;
+  border: thin solid #444857;
   transition: box-shadow 0.1s ease;
 }
 .grid .cell:hover {
